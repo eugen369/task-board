@@ -1,0 +1,38 @@
+<div class="board-detail">
+  <a routerLink="/" class="back-link">← Zurück</a>
+  <h1>{{ boardName() }}</h1>
+
+  <form (ngSubmit)="createTask()" class="create-form">
+    <input
+      [(ngModel)]="newTaskTitle"
+      name="taskTitle"
+      placeholder="Neue Aufgabe..."
+      required
+    />
+    <button type="submit" [disabled]="!newTaskTitle.trim()">
+      Hinzufügen
+    </button>
+  </form>
+
+  @if (error()) {
+    <p class="error">{{ error() }}</p>
+  }
+
+  @if (tasks().length === 0) {
+    <p class="empty">Noch keine Aufgaben vorhanden.</p>
+  } @else {
+    <ul>
+      @for (task of tasks(); track task.id) {
+        <li [class]="task.status.toLowerCase()">
+          <span class="title">{{ task.title }}</span>
+          <div class="actions">
+            <button class="status-btn" (click)="cycleStatus(task)">
+              {{ statusLabel(task.status) }} →
+            </button>
+            <button class="delete-btn" (click)="deleteTask(task)">✕</button>
+          </div>
+        </li>
+      }
+    </ul>
+  }
+</div>

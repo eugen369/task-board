@@ -1,0 +1,107 @@
+.board-detail {
+  max-width: 600px;
+  margin: 3rem auto;
+  padding: 0 1.5rem;
+}
+
+.back-link {
+  display: inline-block;
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  margin-bottom: 1.25rem;
+
+  &:hover { color: var(--accent-hover); }
+}
+
+h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+}
+
+.create-form {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+
+  input { flex: 1; }
+}
+
+.error {
+  color: var(--error);
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+}
+
+.empty {
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+ul {
+  list-style: none;
+
+  li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.875rem 1rem;
+    margin-bottom: 0.5rem;
+    border-radius: var(--radius);
+    border: 1px solid;
+
+    &.todo {
+      background: var(--status-todo);
+      border-color: var(--status-todo-border);
+    }
+
+    &.in_progress {
+      background: var(--status-progress);
+      border-color: var(--status-progress-border);
+    }
+
+    &.done {
+      background: var(--status-done);
+      border-color: var(--status-done-border);
+    }
+  }
+}
+
+.title {
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.status-btn {
+  font-size: 0.8rem;
+  padding: 0.25rem 0.6rem;
+  border-color: var(--border-color);
+  background: var(--bg-card);
+  color: var(--text-secondary);
+
+  &:hover {
+    border-color: var(--accent);
+    color: var(--accent-hover);
+    background: var(--bg-hover);
+  }
+}
+
+.delete-btn {
+  font-size: 0.8rem;
+  padding: 0.25rem 0.6rem;
+  border-color: #7f3a3a;
+  background: var(--bg-card);
+  color: #f87171;
+
+  &:hover {
+    background: #2d1a1a;
+    border-color: #f87171;
+  }
+}
