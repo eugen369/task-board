@@ -1,0 +1,95 @@
+// ============================================================
+// styles.scss — Globale Styles & Dark Theme
+// ============================================================
+
+:root {
+  --bg-primary:    #0f1117;
+  --bg-secondary:  #1a2030;
+  --bg-card:       #1e2535;
+  --bg-hover:      #252d3d;
+  --border-color:  #252d3d;
+  --text-primary:  #e8ecf0;
+  --text-secondary: #8a94a6;
+  --text-muted:    #4a5568;
+  --accent:        #3b82f6;
+  --accent-hover:  #60a5fa;
+  --error:         #f87171;
+  --status-todo:        #2d2a1a;
+  --status-todo-border: #7c6f2a;
+  --status-progress:    #1a2340;
+  --status-progress-border: #2a5080;
+  --status-done:        #1a2d1a;
+  --status-done-border: #2a6b2a;
+  --radius:        6px;
+  --font:          system-ui, -apple-system, sans-serif;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 15px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+
+  &:hover {
+    color: var(--accent-hover);
+  }
+}
+
+input, button {
+  font-family: var(--font);
+  font-size: 0.9rem;
+  border-radius: var(--radius);
+  outline: none;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+input {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  padding: 0.5rem 0.75rem;
+
+  &::placeholder {
+    color: var(--text-muted);
+  }
+
+  &:focus {
+    border-color: var(--accent);
+  }
+}
+
+button {
+  cursor: pointer;
+  border: 1px solid var(--border-color);
+  background: var(--bg-card);
+  color: var(--text-primary);
+  padding: 0.5rem 1rem;
+
+  &:hover {
+    background: var(--bg-hover);
+    border-color: var(--accent);
+  }
+
+  &:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+}
